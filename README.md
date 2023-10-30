@@ -146,7 +146,8 @@ vi index.js # GET node.js HelloWorld
 `gsutil mb -p [PROJECT_ID] gs://[BUCKET_NAME]`
 
 3. deploy
-```gcloud functions deploy helloWorld \
+```bash
+gcloud functions deploy helloWorld \
   --stage-bucket [BUCKET_NAME] \
   --trigger-topic hello_world \
   --runtime nodejs20  
