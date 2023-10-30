@@ -196,3 +196,26 @@ gcloud pubsub subscriptions pull mySubscription --auto-ack
 gcloud pubsub subscriptions pull mySubscription --auto-ack --limit=3
 ```
 
+## GSP094 pub sub python
+
+### virtual env
+
+```
+apt-get install -y virtualenv
+python3 -m venv venv
+source venv/bin/activate
+
+pip install --upgrade google-cloud-pubsub
+git clone https://github.com/googleapis/python-pubsub.git
+cd python-pubsub/samples/snippets
+GOOGLE_CLOUD_PROJECT=XXXXXXXXXXXXXX
+python publisher.py -h
+python publisher.py $GOOGLE_CLOUD_PROJECT create MyTopic
+python subscriber.py $GOOGLE_CLOUD_PROJECT create MyTopic MySub
+
+gcloud pubsub topics publish MyTopic --message "Hello"
+
+python subscriber.py $GOOGLE_CLOUD_PROJECT receive MySub
+```
+
+
