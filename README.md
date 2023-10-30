@@ -58,15 +58,15 @@ export REGION=$(gcloud config get compute/region)
 
 ### ☰ > Compute Engine > Maszyny wirtualne
 
-        | prop      | val |
-        |---|---|
-        | Name	    | lamp-1-vm |
-        | Region    | REGION |
-        | Zone	    | ZONE |
-        | Series	| E2 |
-        | Machine type	| e2-medium |
-        | Boot disk	| Debian GNU/Linux 11 (bullseye) |
-        | Firewall	| Check Allow HTTP traffic |
+| prop      | val |
+|---|---|
+| Name	    | lamp-1-vm |
+| Region    | REGION |
+| Zone	    | ZONE |
+| Series	| E2 |
+| Machine type	| e2-medium |
+| Boot disk	| Debian GNU/Linux 11 (bullseye) |
+| Firewall	| Check Allow HTTP traffic |
 
 ### In the Console, click SSH
 ```
@@ -76,7 +76,9 @@ sudo service apache2 restart
 ```
 
 ### ☰ > Monitoring
-    - Run the Monitoring agent install script command in the SSH terminal of your VM-
+
+- Run the Monitoring agent install script command in the SSH terminal of your VM-
+
     ```
     curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.shA
     sudo bash add-google-cloud-ops-agent-repo.sh --also-install
@@ -106,10 +108,11 @@ sudo service apache2 restart
             - received packets - unch 'active' - resource & metric - received packets - vm instance - instance
 
 ### ☰ > Logging > Logs Explorer
-    - resource - vm instance > lamp-1-vm
+
+- resource - vm instance > lamp-1-vm
     - stream logs
 
-    - compute engine - vm instances - lamp - stop -> see logs
+- compute engine - vm instances - lamp - stop -> see logs
     - ☰ - monitoring - uptime checks
     - alerting (email)
     
@@ -156,7 +159,10 @@ gcloud functions deploy helloWorld \
 ```
 
 4. check
+
 `gcloud functions describe helloWorld`
+
+- trigger
 
 ```
 DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data '{"data":"'$DATA'"}'
@@ -168,7 +174,8 @@ DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data 
 ## GSP096 pub/sub console GSP095 pub/sub cli
 
 ### ☰ > Pub/Sub > Tematy.
-    - create topic - create pull subscription
+
+- create topic - create pull subscription
     - publish message
     - pull msg
     `gcloud pubsub subscriptions pull --auto-ack MySub`
