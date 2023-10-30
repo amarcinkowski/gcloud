@@ -3,7 +3,7 @@ iqwik gcloud
 
 ## GSP073 cloud-console
 
-- menu nawigacyjne > Cloud Storage
+- ☰ > Cloud Storage
     - create bucket
         - uid    wyłącznie małe litery, cyfry, łączniki (-), znaki podkreślenia (_) i kropki (.). Nazwy zawierające kropki wymagają [zatwierdzenia]
     - Udostępnianie zasobnika jako publicznego
@@ -28,16 +28,16 @@ iqwik gcloud
 
 ## GSP064 IAM
 
-- menu nawigacyjne > Administracja > Uprawnienia (menu > IAM & Admin > IAM)
+- ☰ > Administracja > Uprawnienia (☰ > IAM & Admin > IAM)
     - role w projekcie (+GRANT ACCES) basic
         - browser
         - editor
         - viewer
         - owner
     - uprawnienia do Cloud Storage 
-        - Remove project access (Navigation menu > Cloud Storage > Buckets)
+        - Remove project access (☰ > Cloud Storage > Buckets)
     - Add Storage permissions
-        - Navigation menu > IAM & Admin > IAM
+        - ☰ > IAM & Admin > IAM
             - +GRANT ACCESS
             - Select a role
             - Cloud Storage > Storage Object Viewer 
@@ -54,7 +54,7 @@ export REGION=$(gcloud config get compute/region)
 ```
 
 - Tworzenie maszyny Compute Engine
-     - menu nawigacyjne > Compute Engine > Maszyny wirtualne
+     - ☰ > Compute Engine > Maszyny wirtualne
 
         | prop      | val |
         |---|---|
@@ -73,7 +73,7 @@ sudo apt-get install apache2 php7.0
 sudo service apache2 restart
 ```
 
-- Navigation menu (Navigation menu icon) > Monitoring.
+- ☰ > Monitoring.
     - Run the Monitoring agent install script command in the SSH terminal of your VM-
     ```
     curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.shA
@@ -103,12 +103,12 @@ sudo service apache2 restart
         - add widget
             - received packets - unch 'active' - resource & metric - received packets - vm instance - instance
 
-- Navigation menu > Logging > Logs Explorer
+- ☰ > Logging > Logs Explorer
     - resource - vm instance > lamp-1-vm
     - stream logs
 
     - compute engine - vm instances - lamp - stop -> see logs
-    - menu - monitoring - uptime checks
+    - ☰ - monitoring - uptime checks
     - alerting (email)
     
 
@@ -124,11 +124,11 @@ sudo service apache2 restart
 
 ### create
 
-- menu > Clound Functions
+- ☰ > Clound Functions
     - http -> deploy
     - testing -> test - logs "200"
 
-    - function - menu |... - view logs
+    - function -  |... - view logs
     
 
 ### cli
@@ -165,7 +165,7 @@ DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data 
 
 ## GSP096 pub/sub console GSP095 pub/sub cli
 
-- Menu nawigacyjne (Ikona menu nawigacyjnego) > Pub/Sub > Tematy.
+- ☰ > Pub/Sub > Tematy.
     - create topic - create pull subscription
     - publish message
     - pull msg
