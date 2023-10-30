@@ -6,10 +6,10 @@ iqwik gcloud
 ### ☰ > Cloud Storage
 
 - create bucket
-	- uid    wyłącznie małe litery, cyfry, łączniki (-), znaki podkreślenia (_) i kropki (.). Nazwy zawierające kropki wymagają [zatwierdzenia]
+    - uid    wyłącznie małe litery, cyfry, łączniki (-), znaki podkreślenia (_) i kropki (.). Nazwy zawierające kropki wymagają [zatwierdzenia]
 - Udostępnianie zasobnika jako publicznego
-        - podmioty zabepieczeń - allUsers
-        - tworzenie i usuwanie folderów
+    - podmioty zabepieczeń - allUsers
+    - tworzenie i usuwanie folderów
 
 ## GSP074 cli / sdk
 
@@ -33,17 +33,17 @@ iqwik gcloud
 ### ☰ > Administracja > Uprawnienia (☰ > IAM & Admin > IAM)
 
 - role w projekcie (+GRANT ACCES) basic
-        - browser
-        - editor
-        - viewer
-        - owner
+    - browser
+    - editor
+    - viewer
+    - owner
 - uprawnienia do Cloud Storage 
-        - Remove project access (☰ > Cloud Storage > Buckets)
+    - Remove project access (☰ > Cloud Storage > Buckets)
 - Add Storage permissions
-        - ☰ > IAM & Admin > IAM
-            - +GRANT ACCESS
-            - Select a role
-            - Cloud Storage > Storage Object Viewer 
+    - ☰ > IAM & Admin > IAM
+        - +GRANT ACCESS
+        - Select a role
+        - Cloud Storage > Storage Object Viewer 
 
 ## GSP089 Monitoring
 
