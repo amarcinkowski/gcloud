@@ -27,4 +27,4 @@ gcloud config set project qwiklabs-gcp-03-014d3a9d0a1a
 
 
 # Badges
-[](https://cdn.qwiklabs.com/Hgcj1JOh2iuL7imDUME0%2BjEemAfZlnOJoEHsVFIVQCY%3D)
+| [](https://cdn.qwiklabs.com/Hgcj1JOh2iuL7imDUME0%2BjEemAfZlnOJoEHsVFIVQCY%3D) Google Cloud | Perform Foundational Infrastructure Tasks | INFRASTRUCTURE MODERNIZATION SKILL |
