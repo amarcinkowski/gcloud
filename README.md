@@ -55,6 +55,9 @@ export REGION=$(gcloud config get compute/region)
 
 - Tworzenie maszyny Compute Engine
      - menu nawigacyjne > Compute Engine > Maszyny wirtualne
+
+        | prop      | val |
+        |---|---|
         | Name	    | lamp-1-vm |
         | Region    | REGION |
         | Zone	    | ZONE |
