@@ -78,4 +78,49 @@ sudo service apache2 restart
     sudo systemctl status google-cloud-ops-agent"*"
     ```
 
+    - uptime checks
+        - protocol - http
+        - resource type - instance
+        - select vm
+        - freq 1min
+            - [test]
+            - [create]
+    - alerting policy
+        - alerting
+        - create policy
+        - metric - uncheck 'active'
+        - "network traffic" vm instance - interface - network traffic
+        - threshold "above threshold" 500 - retest window "1 min"
+        - notification channels - email - "adr@gmail.com"
+    - dashboard
+        - create
+        - add widget
+            - line - cpu load - resource metric - uncheck 'active'
+            - "cpu load (1m)" - vm instance - cpu - apply
+        - add widget
+            - received packets - unch 'active' - resource & metric - received packets - vm instance - instance
 
+- Navigation menu > Logging > Logs Explorer
+    - resource - vm instance > lamp-1-vm
+    - stream logs
+
+    - compute engine - vm instances - lamp - stop -> see logs
+    - menu - monitoring - uptime checks
+    - alerting (email)
+    
+
+## GSP081 cloud functions
+
+### use case
+
+    - przetwarzanie danych, obrazów, trranskodowanie video, przekształcanie danych
+    - webhooki, github, slack, stripe
+    - API
+    - mobile backend Firebase
+    - IoT, Pub/Sub
+
+- menu > Clound Functions
+    - http -> deploy
+    - testing -> test - logs "200"
+
+    - function - menu |... - view logs
