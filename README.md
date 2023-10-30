@@ -3,12 +3,14 @@ iqwik gcloud
 
 ## GSP073 cloud-console
 
-- ☰ > Cloud Storage
-    - create bucket
-        - uid    wyłącznie małe litery, cyfry, łączniki (-), znaki podkreślenia (_) i kropki (.). Nazwy zawierające kropki wymagają [zatwierdzenia]
-    - Udostępnianie zasobnika jako publicznego
+### ☰ > Cloud Storage
+
+- create bucket
+	- uid    wyłącznie małe litery, cyfry, łączniki (-), znaki podkreślenia (_) i kropki (.). Nazwy zawierające kropki wymagają [zatwierdzenia]
+- Udostępnianie zasobnika jako publicznego
         - podmioty zabepieczeń - allUsers
         - tworzenie i usuwanie folderów
+
 ## GSP074 cli / sdk
 
 - cloud shell
@@ -28,15 +30,16 @@ iqwik gcloud
 
 ## GSP064 IAM
 
-- ☰ > Administracja > Uprawnienia (☰ > IAM & Admin > IAM)
-    - role w projekcie (+GRANT ACCES) basic
+### ☰ > Administracja > Uprawnienia (☰ > IAM & Admin > IAM)
+
+- role w projekcie (+GRANT ACCES) basic
         - browser
         - editor
         - viewer
         - owner
-    - uprawnienia do Cloud Storage 
+- uprawnienia do Cloud Storage 
         - Remove project access (☰ > Cloud Storage > Buckets)
-    - Add Storage permissions
+- Add Storage permissions
         - ☰ > IAM & Admin > IAM
             - +GRANT ACCESS
             - Select a role
@@ -53,8 +56,7 @@ gcloud config set compute/region "REGION"
 export REGION=$(gcloud config get compute/region)
 ```
 
-- Tworzenie maszyny Compute Engine
-     - ☰ > Compute Engine > Maszyny wirtualne
+### ☰ > Compute Engine > Maszyny wirtualne
 
         | prop      | val |
         |---|---|
@@ -66,14 +68,14 @@ export REGION=$(gcloud config get compute/region)
         | Boot disk	| Debian GNU/Linux 11 (bullseye) |
         | Firewall	| Check Allow HTTP traffic |
 
-- In the Console, click SSH
+### In the Console, click SSH
 ```
 sudo apt-get update
 sudo apt-get install apache2 php7.0
 sudo service apache2 restart
 ```
 
-- ☰ > Monitoring.
+### ☰ > Monitoring
     - Run the Monitoring agent install script command in the SSH terminal of your VM-
     ```
     curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.shA
@@ -103,7 +105,7 @@ sudo service apache2 restart
         - add widget
             - received packets - unch 'active' - resource & metric - received packets - vm instance - instance
 
-- ☰ > Logging > Logs Explorer
+### ☰ > Logging > Logs Explorer
     - resource - vm instance > lamp-1-vm
     - stream logs
 
@@ -122,9 +124,9 @@ sudo service apache2 restart
 - mobile backend Firebase
 - IoT, Pub/Sub
 
-### create
+### ☰ > Clound Functions
 
-- ☰ > Clound Functions
+- create
     - http -> deploy
     - testing -> test - logs "200"
 
@@ -165,13 +167,13 @@ DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data 
 
 ## GSP096 pub/sub console GSP095 pub/sub cli
 
-- ☰ > Pub/Sub > Tematy.
+### ☰ > Pub/Sub > Tematy.
     - create topic - create pull subscription
     - publish message
     - pull msg
     `gcloud pubsub subscriptions pull --auto-ack MySub`
 
-- cli topics / subs
+### cli topics / subs
 ```
 gcloud pubsub topics create myTopic
 gcloud pubsub topics create Test1
@@ -187,7 +189,7 @@ gcloud pubsub topics list-subscriptions myTopic
 
 gcloud pubsub subscriptions delete Test1
 ```
-- cli msgs
+### cli msgs
 ```
 gcloud pubsub topics publish myTopic --message "Cześć"
 gcloud pubsub topics publish myTopic --message "Uważam, że Pub/Sub jest super"
@@ -198,9 +200,9 @@ gcloud pubsub subscriptions pull mySubscription --auto-ack --limit=3
 
 ## GSP094 pub sub python
 
-### virtual env
+### virtual env setup
 
-```
+```bash
 apt-get install -y virtualenv
 python3 -m venv venv
 source venv/bin/activate
@@ -209,6 +211,10 @@ pip install --upgrade google-cloud-pubsub
 git clone https://github.com/googleapis/python-pubsub.git
 cd python-pubsub/samples/snippets
 GOOGLE_CLOUD_PROJECT=XXXXXXXXXXXXXX
+```
+
+### pub sub
+```bash
 python publisher.py -h
 python publisher.py $GOOGLE_CLOUD_PROJECT create MyTopic
 python subscriber.py $GOOGLE_CLOUD_PROJECT create MyTopic MySub
@@ -217,5 +223,4 @@ gcloud pubsub topics publish MyTopic --message "Hello"
 
 python subscriber.py $GOOGLE_CLOUD_PROJECT receive MySub
 ```
-
 
