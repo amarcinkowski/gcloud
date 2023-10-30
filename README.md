@@ -1,5 +1,5 @@
 # gcloud
-qwik gcloud
+iqwik gcloud
 
 ## GSP073 cloud-console
 
@@ -135,7 +135,7 @@ sudo service apache2 restart
 
 1. function
 
-```
+```bash
 gcloud config set compute/region REGION
 mkdir gcf_hello_world
 cd gcf_hello_world
@@ -153,4 +153,46 @@ gcloud functions deploy helloWorld \
   --runtime nodejs20  
 ```
 
+4. check
+`gcloud functions describe helloWorld`
+
+```
+DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data '{"data":"'$DATA'"}'
+```
+
+5 logs
+`gcloud functions logs read helloWorld`
+
+## GSP096 pub/sub console GSP095 pub/sub cli
+
+- Menu nawigacyjne (Ikona menu nawigacyjnego) > Pub/Sub > Tematy.
+    - create topic - create pull subscription
+    - publish message
+    - pull msg
+    `gcloud pubsub subscriptions pull --auto-ack MySub`
+
+- cli topics / subs
+```
+gcloud pubsub topics create myTopic
+gcloud pubsub topics create Test1
+gcloud pubsub topics create Test2
+
+gcloud pubsub topics list
+gcloud pubsub topics delete Test1
+
+gcloud pubsub subscriptions create --topic myTopic mySubscription
+gcloud pubsub subscriptions create --topic myTopic Test1
+
+gcloud pubsub topics list-subscriptions myTopic
+
+gcloud pubsub subscriptions delete Test1
+```
+- cli msgs
+```
+gcloud pubsub topics publish myTopic --message "Cześć"
+gcloud pubsub topics publish myTopic --message "Uważam, że Pub/Sub jest super"
+
+gcloud pubsub subscriptions pull mySubscription --auto-ack
+gcloud pubsub subscriptions pull mySubscription --auto-ack --limit=3
+```
 
