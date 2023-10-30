@@ -1,6 +1,6 @@
 # gcloud
 
-My notes for Google Cloud trainings (Google Cloud Skills Boost).
+My notes for Google Cloud trainings (Google Cloud Skills Boost) and [Progress report](https://docs.google.com/spreadsheets/d/1RGSgV5ofXTanl3J4R-YPjYXgUAg-7YXgznbx_X-91X8/edit?usp=sharing).
 
 ## Ubuntu env setup (one time)
 
