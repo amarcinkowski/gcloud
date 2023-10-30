@@ -19,4 +19,5 @@ gcloud config set project qwiklabs-gcp-03-014d3a9d0a1a
 ```
 
 # DevOps Engineer path
-[Perform Foundational Infrastructure Tasks in Google Cloud](devops-infra-tsks.md)
+[Perform Foundational Infrastructure Tasks in Google Cloud](devops-infra-tsks.md) 
+`10 labs (2 days, 6h): GSP064, GSP073, GSP074, GSP080, GSP081, GSP089, GSP094, GSP095, GSP096, GSP315` :white_check_mark: :100: :ok:
