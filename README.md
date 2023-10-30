@@ -1,7 +1,7 @@
 # gcloud
 iqwik gcloud
 
-## GSP073 cloud-console
+## _GSP073_ cloud-console
 
 ### ☰ > Cloud Storage
 
@@ -11,7 +11,7 @@ iqwik gcloud
     - podmioty zabepieczeń - allUsers
     - tworzenie i usuwanie folderów
 
-## GSP074 cli / sdk
+## _GSP074_ cli / sdk
 
 - cloud shell
     - tworzenie zasobnika (bucket)
@@ -28,7 +28,7 @@ iqwik gcloud
     - Usuwanie dostępu publicznego
         `gsutil acl ch -d AllUsers gs://YOUR-BUCKET-NAME/ada.jpg`
 
-## GSP064 IAM
+## _GSP064_ IAM
 
 ### ☰ > Administracja > Uprawnienia (☰ > IAM & Admin > IAM)
 
@@ -45,7 +45,7 @@ iqwik gcloud
         - Select a role
         - Cloud Storage > Storage Object Viewer 
 
-## GSP089 Monitoring
+## _GSP089_ Monitoring
 
 Aby ustawić domyślny region i strefę dla Twojego modułu, uruchom te polecenia gcloud w konsoli Cloud:
 ```
@@ -117,7 +117,7 @@ sudo service apache2 restart
     - alerting (email)
     
 
-## GSP081 cloud functions
+## _GSP081_ cloud functions
  
 ### use case
  
@@ -171,7 +171,7 @@ DATA=$(printf 'Hello World!'|base64) && gcloud functions call helloWorld --data 
 5 logs
 `gcloud functions logs read helloWorld`
 
-## GSP096 pub/sub console GSP095 pub/sub cli
+## _GSP096_ pub/sub console _GSP095_ pub/sub cli
 
 ### ☰ > Pub/Sub > Tematy.
 
@@ -205,7 +205,7 @@ gcloud pubsub subscriptions pull mySubscription --auto-ack
 gcloud pubsub subscriptions pull mySubscription --auto-ack --limit=3
 ```
 
-## GSP094 pub sub python
+## _GSP094_ pub sub python
 
 ### virtual env setup
 
