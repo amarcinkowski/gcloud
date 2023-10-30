@@ -113,17 +113,43 @@ sudo service apache2 restart
     
 
 ## GSP081 cloud functions
-
+ 
 ### use case
+ 
+- przetwarzanie danych, obrazów, trranskodowanie video, przekształcanie danych
+- webhooki, github, slack, stripe
+- API
+- mobile backend Firebase
+- IoT, Pub/Sub
 
-    - przetwarzanie danych, obrazów, trranskodowanie video, przekształcanie danych
-    - webhooki, github, slack, stripe
-    - API
-    - mobile backend Firebase
-    - IoT, Pub/Sub
+### create
 
 - menu > Clound Functions
     - http -> deploy
     - testing -> test - logs "200"
 
     - function - menu |... - view logs
+    
+
+### cli
+
+1. function
+
+```
+gcloud config set compute/region REGION
+mkdir gcf_hello_world
+cd gcf_hello_world
+vi index.js # GET node.js HelloWorld
+```
+
+2. bucket
+`gsutil mb -p [PROJECT_ID] gs://[BUCKET_NAME]`
+
+3. deploy
+```gcloud functions deploy helloWorld \
+  --stage-bucket [BUCKET_NAME] \
+  --trigger-topic hello_world \
+  --runtime nodejs20  
+```
+
+
