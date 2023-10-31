@@ -4,11 +4,16 @@ My notes for Google Cloud trainings (Google Cloud Skills Boost) and [Progress re
 
 ## Ubuntu env setup (one time)
 
+### gcloud
 ```
 sudo apt install apt-transport-https ca-certificates gnupg curl
 echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.asc
 sudo apt update && sudo apt-get install google-cloud-cli
+```
+### for kubectl auth
+```
+sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 ```
 
 ## Training env setup (each)
@@ -39,4 +44,9 @@ gcloud config set project qwiklabs-gcp-03-014d3a9d0a1a
  1064  gcloud compute instances stop my-opencensus-demo
  1066* gcloud compute instances set-machine-type  my-opencensus-demo --machine-type e2-medium
  1067* gcloud compute instances start my-opencensus-demo
+```
+
+### get project 
+```
+gcloud info --format='value(config.project)'
 ```
