@@ -28,3 +28,13 @@ gcloud config set project qwiklabs-gcp-03-014d3a9d0a1a
 
 # Badges
 | [](https://cdn.qwiklabs.com/Hgcj1JOh2iuL7imDUME0%2BjEemAfZlnOJoEHsVFIVQCY%3D) Google Cloud | Perform Foundational Infrastructure Tasks | INFRASTRUCTURE MODERNIZATION SKILL |
+
+# Useful commands
+
+### change type (e.g. to e2-medium)
+```bash
+ 1062  gcloud compute instances describe my-opencensus-demo
+ 1064  gcloud compute instances stop my-opencensus-demo
+ 1066* gcloud compute instances set-machine-type  my-opencensus-demo --machine-type e2-medium
+ 1067* gcloud compute instances start my-opencensus-demo
+```
