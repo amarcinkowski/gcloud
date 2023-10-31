@@ -20,9 +20,9 @@ gcloud config set project qwiklabs-gcp-03-014d3a9d0a1a
 
 # DevOps Engineer path
 
-| trng | details | result |
+| trng | details | result | badge |
 |---|---|---|
-| [Perform Foundational Infrastructure Tasks in Google Cloud](devops-infra-tsks.md) | `10 labs (2 days, 6h): GSP064, GSP073, GSP074, GSP080, GSP081, GSP089, GSP094, GSP095, GSP096, GSP315` | :white_check_mark: :100: :ok: |
+| [Perform Foundational Infrastructure Tasks in Google Cloud](devops-infra-tsks.md) | `10 labs (2 days, 6h): GSP064, GSP073, GSP074, GSP080, GSP081, GSP089, GSP094, GSP095, GSP096, GSP315` | :white_check_mark: :100: :ok: | [img](https://cdn.qwiklabs.com/Hgcj1JOh2iuL7imDUME0%2BjEemAfZlnOJoEHsVFIVQCY%3D) INFRASTRUCTURE MODERNIZATION SKILL |
 | [Monitor and Log with Google Cloud Operations Suite](devops-monitor.md) | | :soon: |
 
 
@@ -30,7 +30,6 @@ gcloud config set project qwiklabs-gcp-03-014d3a9d0a1a
 
 | | |
 |---|---|
-| [img](https://cdn.qwiklabs.com/Hgcj1JOh2iuL7imDUME0%2BjEemAfZlnOJoEHsVFIVQCY%3D) Perform Foundational Infrastructure Tasks | INFRASTRUCTURE MODERNIZATION SKILL |
 
 # Useful commands
 
