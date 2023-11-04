@@ -121,3 +121,55 @@ sudo bash add-google-cloud-ops-agent-repo.sh --also-install
 Run App `go run main.go`
 
 Cloud Monitoring - Metrics Explorer - Select a metric - vm>custom metrics>opencensus/my.videoservice.org
+
+
+## GSP091 log-based metrics
+
+Log-based metrics:
+- system metrics
+- user-defined metrics
+
+create GKE cluster
+`gcloud container clusters create gmp-cluster --num-nodes=1 --zone us-east1-c`
+
+### log based alert
+
+logs explorer
+```
+resource.type="gce_instance" 
+protoPayload.methodName="v1.compute.instances.stop"
+```
+create alert - notification - email
+
+### log-based metric
+
+list clusters
+`gcloud container clusters list`
+
+authenticated the cluster
+`gcloud container clusters get-credentials gmp-cluster`
+
+create namespace
+`kubectl create ns gmp-test`
+
+deploy and verify app
+```
+kubectl -n gmp-test apply -f https://storage.googleapis.com/spls/gsp091/gmp_flask_deployment.yaml
+kubectl -n gmp-test apply -f https://storage.googleapis.com/spls/gsp091/gmp_flask_service.yaml
+kubectl get services -n gmp-test
+```
+
+logs explorer - create metric - filter selection
+```
+severity=ERROR
+resource.labels.container_name="hello-app"
+textPayload: "ERROR: 404 Error page not found"
+```
+[create]
+
+logging - log-based metric - select - 2min roll win - notifications - create policy
+
+> generate errors in bash
+
+### logs explorer - monitoring - alerting - alerting policies
+
