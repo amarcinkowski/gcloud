@@ -59,4 +59,65 @@ uptime checks -  three dots  -  add alert policy +add alert condition - Uptime h
 new condition - metric - uncheck active - search check_passed and click VM Instance > Uptime_check > Check passed [apply]
 
 
+## GSP092 monitoring logging - cloud func
 
+### cloud function
+
+name - region - http (trigger type) - allow unauth invocations [save] - runtime settings - max num of instances 5
+- [next] - [deploy]
+
+### vegeta
+
+cloud function - trigger tab - trigger url - copy url
+```
+curl -LO 'https://github.com/tsenart/vegeta/releases/download/v6.3.0/vegeta-v6.3.0-linux-386.tar.gz'
+tar xvzf vegeta-v6.3.0-linux-386.tar.gz
+echo "GET https://-.cloudfunctions.net/helloWorld" | ./vegeta attack -duration=300s > results.bin
+```
+
+### logs based metric
+
+logging - logs explorer - resource - cloud function->helloWorld [apply] - run query - create metric
+distribution (metric type) - cloudfunctionlatency-logs - textPayload - regular expr
+```
+execution took (\d+)
+```
+[create metric]
+
+### monitoring
+
+menu - monitoring - metric explorer - select a metric "executions" - cloud fun->fun->executions [apply]
+widget type - sacked bar chart 
+
+### dashboards
+
+dashboards - add widget - stacket bar - select a metric - vm instance>cpi>cpu util [apply]
+add widget - heamap - select a metric - vm instance> Vm_flow < RTT LATENCIES [apply]
+
+## GSP111 reporting app metrics into cloud monitoring (open census)
+
+create vm instance (e2 medium) - allow http / https
+install go & open sensus
+```
+sudo curl -O https://storage.googleapis.com/golang/go1.17.2.linux-amd64.tar.gz
+sudo tar -xvf go1.17.2.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go
+sudo mv go /usr/local
+sudo apt-get update
+sudo apt-get install git
+export PATH=$PATH:/usr/local/go/bin
+go get go.opencensus.io
+go get contrib.go.opencensus.io/exporter/stackdriver
+go mod init test3
+go mod tidy
+```
+
+install agents for cloud monitoring
+```
+curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
+sudo bash add-google-cloud-ops-agent-repo.sh --also-install
+```
+
+Run App `go run main.go`
+
+Cloud Monitoring - Metrics Explorer - Select a metric - vm>custom metrics>opencensus/my.videoservice.org
