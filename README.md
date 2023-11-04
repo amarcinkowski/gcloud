@@ -18,11 +18,20 @@ sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 
 ## Training env setup (each)
 
+### Auth & project
 ```
 gcloud auth login
 gcloud config set project qwiklabs-gcp-03-014d3a9d0a1a
 ```
 
+### Default zone & region 
+```
+gcloud config set compute/zone "ZONE"
+export ZONE=$(gcloud config get compute/zone)
+
+gcloud config set compute/region "REGION"
+export REGION=$(gcloud config get compute/region)
+```
 # DevOps Engineer path
 
 | trng | details | result | badge |
