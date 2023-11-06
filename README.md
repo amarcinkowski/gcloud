@@ -60,3 +60,10 @@ export REGION=$(gcloud config get compute/region)
 ```
 gcloud info --format='value(config.project)'
 ```
+
+### enable api
+```
+gcloud services enable run.googleapis.com
+```
+
+

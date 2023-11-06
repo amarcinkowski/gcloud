@@ -35,4 +35,24 @@ create sql - mysql - user/pass - enterpise/sandbox - connections>networking - ad
 
 vm - `/var/www/html` - `index.php` - db conn / pass - `<img src (url from cloud storage)` - `sudo service apache2 restart`
 
+### Cloud Run (App in the cloud)
+
+enable api `gcloud services enable run.googleapis.com`
+
+nodejs - `package.json` (dep express) - `index.js` (expresss hello world) - `Dockerfile` (node:12-slim / workdir / copy / npm start)
+
+build image `gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/helloworld`
+
+check `gcloud container images list`
+
+configure gcloud `gcloud auth configure-docker`
+
+run app `docker run -d -p 8080:8080 gcr.io/$GOOGLE_CLOUD_PROJECT/helloworld`
+
+see page `curl localhost:8080`
+
+deploy to cloud run `gcloud run deploy --image gcr.io/$GOOGLE_CLOUD_PROJECT/helloworld --allow-unauthenticated --region=$LOCATION`
+
+cleanup - remove image - `gcloud container images delete gcr.io/$GOOGLE_CLOUD_PROJECT/helloworld` - remove Cloud Run `gcloud run services delete helloworld --region="REGION"`
+
 
