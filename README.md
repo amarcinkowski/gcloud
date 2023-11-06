@@ -36,7 +36,7 @@ export REGION=$(gcloud config get compute/region)
 
 | trng | details | result | badge |
 |---|---|---|---|
-| [Perform Foundational Infrastructure Tasks in Google Cloud](devops-infra-tsks.md) | `10 labs (2 days, 6h): GSP064, GSP073, GSP074, GSP080, GSP081, GSP089, GSP094, GSP095, GSP096, GSP315` | :white_check_mark: :100: :ok: | [img](https://cdn.qwiklabs.com/SOUHCWvev6HmfC5QztXJd%2BCkSK8%2B3WGWg%2BF%2Fww%2FfqXA%3D) INFRASTRUCTURE MODERNIZATION SKILL |
+| [Perform Foundational Infrastructure Tasks in Google Cloud](devops-infra-tsks.md) | `10 labs (2 days, 6h): GSP064, GSP073, GSP074, GSP080, GSP081, GSP089, GSP094, GSP095, GSP096, GSP315` | :white_check_mark: :100: :ok: | [badge](https://cdn.qwiklabs.com/SOUHCWvev6HmfC5QztXJd%2BCkSK8%2B3WGWg%2BF%2Fww%2FfqXA%3D) |
 | [Monitor and Log with Google Cloud Operations Suite](devops-monitor.md) | `6 labs (4 days, 7h): GSP087, GSP089, GSP090, GSP091, GSP092, GSP111, GSP338` | :white_check_mark: :100: :ok: | [badge](https://cdn.qwiklabs.com/qJIAuJXge9co6AJ0qbQlcjkJ%2F2uHpOQA4eHmmLBQQOc%3D) |
 | [Google Cloud Fundamentals: Core Infrastructure](devops-core-infra.md) | (6 modules, 1day, 5h) | :white_check_mark: :100: :ok: | [badge](https://cdn.qwiklabs.com/c2YC1UuO5rdWmNVT%2FcutvuyiE3DJMExXHjpOU15jvhY%3D) |
 
