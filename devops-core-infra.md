@@ -4,7 +4,10 @@
 
 menu > Marketplace - LAMP Packaged by Bitnami - zone - e2-medium - deploy
 
-ssh - cd /opt/bitnami - sudo sh -c 'echo "<?php phpinfo(); ?>" > apache2/htdocs/phpinfo.php'
+ssh - cd /opt/bitnami
+```
+sudo sh -c 'echo "<? php phpinfo();  ?>" > apache2/htdocs/phpinfo.php'
+```
 
 open `http://SITE_ADDRESS/phpinfo.php`
 
