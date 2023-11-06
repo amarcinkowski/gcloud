@@ -27,4 +27,12 @@ create 2 vm's - different regions - delete allow icmp - cannot ping -  delete al
 
 ## Cloud Storage & Cloud SQL
 
+create vm - allow http traffic - advanced>management-automation `apt update & apt install apache2 php php-mysql -y & service apache2 restart` - create
+
+create storage `LOCATION=US && gcloud storage buckets create -l $LOCATION gs://$DEVSHELL_PROJECT_ID` - upload image and authorize (acl all users)
+
+create sql - mysql - user/pass - enterpise/sandbox - connections>networking - add a network - `<vm-instance ext.ip> 35.192.208.2/32` - save
+
+vm - `/var/www/html` - `index.php` - db conn / pass - `<img src (url from cloud storage)` - `sudo service apache2 restart`
+
 
